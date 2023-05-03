@@ -19,9 +19,24 @@ function scanarama($dir) {
         
     }
     return $topdir;
+
+
+
+
 }
 
-function scanDir($target) {
+function seefiles($d) {
+    if(is_dir($d)) {
+        $fs = glob( $d . '*', GLOB_MARK );
+        $fs = scandir($fs);
+        foreach ( $fs as $f) {
+            $f = array($f, is_file($f), seefiles($f));
+        }
+        return $fs;
+    }
+}
+
+function scawnDir($target) {
 
     if(is_dir($target)){
 
@@ -32,7 +47,7 @@ function scanDir($target) {
             scanDir( $file );
         }
 
-
+        
     } 
 }
 
@@ -54,9 +69,9 @@ function pretty_dump($arr, $d=1){
     if ($d==1) echo "</pre>";   // HTML Only
 }
 
-$dirscanned = scanDir($directory);
+$dirscanned = seefiles($directory);
 
-$transversed = pretty_dump($dirscanned);
+$transversed = print_r($dirscanned);
 
 ?>
 
