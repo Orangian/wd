@@ -1,0 +1,171 @@
+/* Remember to run https://autoprefixer.github.io/ before pushing to prod! */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --logo-text: url(https://raw.githubusercontent.com/Orangian/qern-cms/master/TySayahi_CMS/logo-undashed-sketched-whyte-text.svg);
+    }
+     a {
+        color: white;
+    }
+    .navbar {
+        background-color: canvas;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --logo-text: url(https://raw.githubusercontent.com/Orangian/qern-cms/master/TySayahi_CMS/logo-undashed-sketched-black-text.svg);
+    }
+     a {
+        color: black;
+    }
+    .navbar {
+        background-color: canvas;
+    }
+}
+
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* 921 x 3119 ratio */
+.logotext {
+    background-image: var(--logo-text);
+    height: 5rem;
+    width: 17rem;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+}
+
+.stickynavbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+main {
+    padding-top: 7rem;
+}
+
+.stickynavbar + .main {
+    padding-top: 7rem;
+}
+
+#toplogotext {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Fira Sans";
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+ a {
+    text-decoration: none;
+    position: relative;
+    display: block
+}
+
+.navbar > ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;    
+}
+
+ a::after {
+    text-decoration: none;
+    width: 0;
+    content: "";
+    position: absolute;
+    height: .2em;
+    display: block;
+    transition-property: width;
+    bottom: 0;
+    transition: 0.5s cubic-bezier(0.42, 0.0, 0.0, 1);
+    background-color: #802823;
+    border-radius: 1vw;
+}
+
+ a:hover::after,  a:focus::after {
+    width: 100%;
+}
+
+#currentpage a:hover, #currentpage a:focus {
+    color: #dd9350;
+    transition: color .5s ease;
+}
+
+#currentpage a::after {
+    background-color: #dd9350;
+}
+
+ a:hover,  a:focus {
+    color: #802823;
+    transition: color .5s ease;
+}
+
+ a::after {
+    background-color: #802823;
+}
+
+.sixtyseeaich {
+    max-width: 60ch;
+    margin-left: auto; 
+    margin-right: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    object-fit: contain; 
+    display: flex;
+}
+
+img {
+    object-fit: scale-down;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+h1 {
+    font-family: "Zilla Slab Highlight";
+}
+
+h2 {
+    font-family: "Fira Sans";
+}
+
+h3 {
+    font-family: "Fira Sans";
+}
+
+h4 {
+    font-family: "Fira Sans";
+}
+
+p {
+    font-family: "Zilla Slab";
+    font-weight: normal;
+}
+
+a {
+    width:  fit-content;
+}

@@ -1,20 +1,32 @@
 <?php
-$directory = '/Users/24sayahit/Documents/wd-1';
+$directory = '/Users/24sayahit/Documents/wd-1/';
 
+function panopticon($inputobject) {
+    if(is_dir($inputobject)) {
+        $objects = array();
+        $initobject = array_values(array_diff(scandir($inputobject), array('.', '..')));
+        foreach($initobject as $object) {
+            array_push( $objects, array($object, is_dir($object), panopticon($object)) );
+        }
+        return $objects;
+    } else {
+        return array($inputobject, is_dir($inputobject));
+    }
+}
 
-function seefiles($d) {
-    if(is_dir($d)) {
-        foreach ( array_values(array_diff(scandir($d), array('..'))) as $f ) {
-            if(is_dir($f)) {
-                $di[] = $f;
-                $di[] = array($this->$di, seefiles($f));
+function seefiles($directory) {
+    if(is_dir($directory)) {
+        $objects = array();
+        foreach ( array_values(array_diff(scandir($dirs), array('..','.'))) as $file ) {
+            if(is_dir($file)) {
+                array_push($dirs, $file, seefiles($f));
             } else {
-                $fi[] = $f;
+                array_push($files, $file, seefiles($f));
             }
         }
         return $di;
     } else {
-        return false;
+        return "";
     }
 }
 
@@ -53,7 +65,7 @@ function pretty_dump($arr, $d=1){
     if ($d==1) echo "</pre>";   // HTML Only
 }
 
-$transversed = pretty_dump(seefiles($directory));
+$transversed = pretty_dump(panopticon($directory));
 
 ?>
 
