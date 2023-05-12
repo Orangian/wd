@@ -7,14 +7,14 @@
 	// Configuration                
 	// =============================
 	
-	$browseDirectories = false; // Navigate into sub-folders
+	$browseDirectories = true; // Navigate into sub-folders
 	$title = 'Index of {{path}}';
 	$subtitle = '{{files}} objects in this folder, {{size}} total'; // Empty to disable
 	$breadcrumbs = false; // Make links in {{path}}
 	$showParent = false; // Display a (parent directory) link
 	$showDirectories = true;
 	$showDirectoriesFirst = true; // Lists directories first when sorting by name
-	$showHiddenFiles = false; // Display files starting with "." too
+	$showHiddenFiles = true; // Display files starting with "." too
 	$alignment = 'left'; // You can use 'left' or 'center'
 	$showIcons = true;
 	$dateFormat = 'd/m/y H:i'; // Used in date() function
