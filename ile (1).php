@@ -7,14 +7,14 @@
 	// Configuration                
 	// =============================
 	
-	$browseDirectories = true; // Navigate into sub-folders
+	$browseDirectories = false; // Navigate into sub-folders
 	$title = 'Index of {{path}}';
 	$subtitle = '{{files}} objects in this folder, {{size}} total'; // Empty to disable
 	$breadcrumbs = false; // Make links in {{path}}
 	$showParent = false; // Display a (parent directory) link
 	$showDirectories = true;
 	$showDirectoriesFirst = true; // Lists directories first when sorting by name
-	$showHiddenFiles = true; // Display files starting with "." too
+	$showHiddenFiles = false; // Display files starting with "." too
 	$alignment = 'left'; // You can use 'left' or 'center'
 	$showIcons = true;
 	$dateFormat = 'd/m/y H:i'; // Used in date() function
@@ -66,11 +66,11 @@
 
 	// Encoded images generator
 	if (!empty($_GET['i'])) {
-		header('Content-type: image/svg+xml');
+		header('Content-type: image/png');
 		switch ($_GET['i']) {
-			case       'asc': exit(base64_decode('PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjQxNDIgNC43MDcxIj48cG9seWdvbiBwb2ludHM9IjEuMjA3MSAuNSA0LjcwNzEgNCA4LjIwNzEgLjUgMS4yMDcxIC41IiBmaWxsPSIjMjY4YmQyIiBzdHJva2U9IiMyNjhiZDIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPjwvc3ZnPg=='));
-			case      'desc': exit(base64_decode('PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjQxNDIgNC43MDcxIj48cG9seWdvbiBwb2ludHM9IjguMjA3MSA0LjIwNzEgNC43MDcxIC43MDcxIDEuMjA3MSA0LjIwNzEgOC4yMDcxIDQuMjA3MSIgZmlsbD0iIzI2OGJkMiIgc3Ryb2tlPSIjMjY4YmQyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiLz48L3N2Zz4='));
-			case 'directory': exit(base64_decode('PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC41MTgyIDI1LjI0MSI+PHBhdGggaWQ9ImIiIGQ9Im0xLjQ4OCwyNS4yNGMtLjUzNTctLjAwMDYtLjk2OTUtLjQzNTMtLjk2OS0uOTcxLjAwMDEtLjEzMzIuMDI3Ny0uMjY0OS4wODEtLjM4N2w0LjgwNy0xMC44NTNjLjcwNzYtMS41MTA1LDIuMTcwNC0yLjUyNiwzLjgzMy0yLjY2MWgxOS41NDRjMS40NzIsMCwyLjEzNSwxLjE5MywxLjQ4NCwyLjY2MWwtNC44NTIsMTAuOTU0Yy0uMzM1Mi43NjYtMS4wOTI5LDEuMjYwMS0xLjkyOSwxLjI1OGwtMjEuOTk5LS4wMDFaTTAsMTguNzVWMi4zMzdDLjAwMDYsMS4wNDY1LDEuMDQ2Ni4wMDA2LDIuMzM3LDBoNi4xNTFjLjkzMTMuMDAyNiwxLjgwOTEuNDM1NiwyLjM3OCwxLjE3M2wyLjMzNCwzLjA0NWMuNTY1OS43NDA0LDEuNDQ1MSwxLjE3MzksMi4zNzcsMS4xNzJoNi45NDdjMS4yOTA1LjAwMDYsMi4zMzY0LDEuMDQ2NSwyLjMzNywyLjMzN3YuMjUxYy4wMDE3LjM2MjMtLjI5MDcuNjU3My0uNjUzLjY1OS0uMDAwNywwLS4wMDEzLDAtLjAwMiwwSDguMTJjLTEuNjYzMS4xMzM3LTMuMTI3NCwxLjE0NzQtMy44MzgsMi42NTdsLTMuMzgyLDcuNjQ2Yy0uMDcxLjE3MTEtLjIzODguMjgxOS0uNDI0LjI4LS4yNTczLjAwNTUtLjQ3MDQtLjE5ODYtLjQ3NTktLjQ1NTktLjAwMDEtLjAwNDctLjAwMDEtLjAwOTQsMC0uMDE0MVoiLz48L3N2Zz4='));
+			case       'asc': exit(base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAFUlEQVQImWNgoBT8x4JxKsBpAhUAAPUACPhuMItPAAAAAElFTkSuQmCC'));
+			case      'desc': exit(base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAF0lEQVQImWNgoBb4j0/iPzYF/7FgCgAADegI+OMeBfsAAAAASUVORK5CYII='));
+			case 'directory': exit(base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASklEQVQYlYWPwQ3AMAgDb3Tv5AHdR5OqTaBB8gM4bAGApACPRr/XuujA+vqVcAI3swDYjqRSH7B9oHI8grbTgWN+g3+xq0k6TegCNtdPnJDsj8sAAAAASUVORK5CYII='));
 			case      'file': exit(base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYlcXQsQ0AIAhE0b//GgzDWGdjDCJoKck13CsIALi7gJxyVmFmyrsXLHEHD7zBmBbezvoJm4cL0OwYouM4O3J+UDYAAAAASUVORK5CYII='));
 		}
 	}
@@ -173,14 +173,178 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Fira+Sans&family=Zilla+Slab&family=Zilla+Slab+Highlight" as="style" crossorigin="anonymous"/>
-	<?php require 'colors.php' ?>
-	<?php require 'layout.php' ?>
+	
 	<meta charset="UTF-8">
 	<meta name="robots" content="<?php echo htmlentities($robots) ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<title><?php echo getTitleHTML($title) ?></title>
+	
+	<style type="text/css">
+		
+		* {
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+		
+		body {
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 13px;
+			color: #000000;
+		}
+		
+		#wrapper {
+			max-width: 600px;
+			*width: 600px;
+			margin: 0 auto;
+			text-align: left;
+		}
+		
+		body#left {
+			text-align: left;
+		}
+		
+		body#left #wrapper {
+			margin: 0 20px;
+		}
+		
+		h1 {
+			font-size: 21px;
+			padding: 0 10px;
+			margin: 20px 0 0;
+			font-weight: bold;
+		}
+		
+		h2 {
+			font-size: 14px;
+			padding: 0 10px;
+			margin: 10px 0 0;
+			color: #999999;
+			font-weight: normal;
+		}
+		
+		a {
+			color: #003399;
+			text-decoration: none;
+		}
+		
+		a:hover {
+			color: #0066cc;
+			text-decoration: underline;
+		}
+		
+		ul#header {	
+			margin-top: 20px;
+		}
+		
+		ul li {
+			display: block;
+			list-style-type: none;
+			overflow: hidden;
+			padding: 10px;
+		}
+		
+		ul li:hover {
+			background-color: #f3f3f3;
+		}
+		
+		ul li .date {
+			text-align: center;
+			width: 120px;
+		}
+		
+		ul li .size {
+			text-align: right;
+			width: 90px;
+		}
+		
+		ul li .date, ul li .size {
+			float: right;
+			font-size: 12px;
+			display: block;
+			color: #666666;
+		}
+		
+		ul#header li {
+			font-size: 11px;
+			font-weight: bold;
+			border-bottom: 1px solid #cccccc;
+		}
+		
+		ul#header li:hover {
+			background-color: transparent;
+		}
+		
+		ul#header li * {
+			color: #000000;
+			font-size: 11px;
+		}
+		
+		ul#header li a:hover {
+			color: #666666;
+		}
+		
+		ul#header li .asc span, ul#header li .desc span {
+			padding-right: 15px;
+			background-position: right center;
+			background-repeat: no-repeat;
+		}
+		
+		ul#header li .asc span {
+			background-image: url('<?php echo $_self ?>?i=asc');
+		}
+		
+		ul#header li .desc span {
+			background-image: url('<?php echo $_self ?>?i=desc');
+		}
+		
+		ul li.item {
+			border-top: 1px solid #f3f3f3;
+		}
+		
+		ul li.item:first-child {
+			border-top: none;
+		}
+		
+		ul li.item .name {
+			font-weight: bold;
+		}
+		
+		ul li.item .directory, ul li.item .file {
+			padding-left: 20px;
+			background-position: left center;
+			background-repeat: no-repeat;
+		}
+		
+		ul li.item .directory {
+			background-image: url('<?php echo $_self ?>?i=directory');
+		}
+		
+		ul li.item .file {
+			background-image: url('<?php echo $_self ?>?i=file');
+		}
+		
+		#footer {
+			color: #cccccc;
+			font-size: 11px;
+			margin-top: 40px;
+			margin-bottom: 20px;
+			padding: 0 10px;
+			text-align: left;
+		}
+		
+		#footer a {
+			color: #cccccc;
+			font-weight: bold;
+		}
+		
+		#footer a:hover {
+			color: #999999;
+		}
+		
+	</style>
 	
 </head>
 <body <?php if ($alignment == 'left') echo 'id="left"' ?>>
@@ -193,9 +357,9 @@
 		<ul id="header">
 			
 			<li>
-				<a href="<?php echo buildLink(array('s' => 'size', 'r' => (!$_sort_reverse && $_sort == 'size') ? '1' : null)) ?>" class="size <?php if ($_sort == 'size') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Size<div></div></span></a>
-				<a href="<?php echo buildLink(array('s' => 'time', 'r' => (!$_sort_reverse && $_sort == 'time') ? '1' : null)) ?>" class="date <?php if ($_sort == 'time') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Last modified<div></div></span></a>
-				<a href="<?php echo buildLink(array('s' =>  null , 'r' => (!$_sort_reverse && $_sort == 'name') ? '1' : null)) ?>" class="name <?php if ($_sort == 'name') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Name<div></div></span></a>
+				<a href="<?php echo buildLink(array('s' => 'size', 'r' => (!$_sort_reverse && $_sort == 'size') ? '1' : null)) ?>" class="size <?php if ($_sort == 'size') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Size</span></a>
+				<a href="<?php echo buildLink(array('s' => 'time', 'r' => (!$_sort_reverse && $_sort == 'time') ? '1' : null)) ?>" class="date <?php if ($_sort == 'time') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Last modified</span></a>
+				<a href="<?php echo buildLink(array('s' =>  null , 'r' => (!$_sort_reverse && $_sort == 'name') ? '1' : null)) ?>" class="name <?php if ($_sort == 'name') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Name</span></a>
 			</li>
 			
 		</ul>

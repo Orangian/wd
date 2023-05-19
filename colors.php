@@ -20,13 +20,38 @@
     color-scheme: light dark;
 }
 
+ul#header li .asc span div {
+    background-image: url('<?php echo $_self ?>?i=asc');
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 1vw;
+    width: 1vw;
+}
+
+ul#header li .desc span div {
+    background-image: url('<?php echo $_self ?>?i=desc');
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+ul li.item .directory div {
+    background-image: url('<?php echo $_self ?>?i=directory');
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+ul li.item .file div {
+    background-image: url('<?php echo $_self ?>?i=file');
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-3: var(--base03);
         --bg-2: var(--base02);
         --txt-0: var(--base0);
         --txt-1: var(--base1);
-
     }
 }
 
@@ -36,12 +61,11 @@
         --bg-2: var(--base2);
         --txt-0: var(--base00);
         --txt-1: var(--base01);
-
     }
 }
 
 body {
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
     color: var(--txt-1);
 }
 
@@ -50,27 +74,23 @@ body {
 }
 
 h2 {
-    color: 
+    color: var(--txt-1);
 }
 
 a {
-    color: 
+    color: var(--blue);
 }
 
 a:hover {
-    color:
+    color: var(--cyan);
 }
 
 ul li:hover {
-    background-color:
-}
-
-ul li .date, ul li .size {
-    color: 
+    background-color: var(--bg-2);
 }
 
 ul#header li {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid var(--yellow);
 }
 
 ul#header li * {
@@ -82,14 +102,14 @@ ul#header li a:hover {
 }
 
 ul li.item {
-    border-top: 1px solid #f3f3f3;
+    border-top: 1px solid var(--yellow);
 }
 
 #footer {
-    color: 
+    color: var(--txt-1);
 }
 
-#footer a{
+#footer a { 
     color: 
 }
 
@@ -102,7 +122,7 @@ a:hover,  a:focus {
 }
 
 a::after {
-    background-color:
+    background-color: var(--yellow);
 }
 
 </style>
