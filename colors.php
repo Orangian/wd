@@ -20,32 +20,6 @@
     color-scheme: light dark;
 }
 
-ul#header li .asc span div {
-    background-image: url('<?php echo $_self ?>?i=asc');
-    background-position: right center;
-    background-repeat: no-repeat;
-    height: 1vw;
-    width: 1vw;
-}
-
-ul#header li .desc span div {
-    background-image: url('<?php echo $_self ?>?i=desc');
-    background-position: right center;
-    background-repeat: no-repeat;
-}
-
-ul li.item .directory div {
-    background-image: url('<?php echo $_self ?>?i=directory');
-    background-position: right center;
-    background-repeat: no-repeat;
-}
-
-ul li.item .file div {
-    background-image: url('<?php echo $_self ?>?i=file');
-    background-position: right center;
-    background-repeat: no-repeat;
-}
-
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-3: var(--base03);

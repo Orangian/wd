@@ -71,7 +71,7 @@
 			case       'asc': exit(base64_decode('PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjQxNDIgNC43MDcxIj48cG9seWdvbiBwb2ludHM9IjEuMjA3MSAuNSA0LjcwNzEgNCA4LjIwNzEgLjUgMS4yMDcxIC41IiBmaWxsPSIjMjY4YmQyIiBzdHJva2U9IiMyNjhiZDIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPjwvc3ZnPg=='));
 			case      'desc': exit(base64_decode('PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjQxNDIgNC43MDcxIj48cG9seWdvbiBwb2ludHM9IjguMjA3MSA0LjIwNzEgNC43MDcxIC43MDcxIDEuMjA3MSA0LjIwNzEgOC4yMDcxIDQuMjA3MSIgZmlsbD0iIzI2OGJkMiIgc3Ryb2tlPSIjMjY4YmQyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiLz48L3N2Zz4='));
 			case 'directory': exit(base64_decode('PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC41MTgyIDI1LjI0MSI+PHBhdGggaWQ9ImIiIGQ9Im0xLjQ4OCwyNS4yNGMtLjUzNTctLjAwMDYtLjk2OTUtLjQzNTMtLjk2OS0uOTcxLjAwMDEtLjEzMzIuMDI3Ny0uMjY0OS4wODEtLjM4N2w0LjgwNy0xMC44NTNjLjcwNzYtMS41MTA1LDIuMTcwNC0yLjUyNiwzLjgzMy0yLjY2MWgxOS41NDRjMS40NzIsMCwyLjEzNSwxLjE5MywxLjQ4NCwyLjY2MWwtNC44NTIsMTAuOTU0Yy0uMzM1Mi43NjYtMS4wOTI5LDEuMjYwMS0xLjkyOSwxLjI1OGwtMjEuOTk5LS4wMDFaTTAsMTguNzVWMi4zMzdDLjAwMDYsMS4wNDY1LDEuMDQ2Ni4wMDA2LDIuMzM3LDBoNi4xNTFjLjkzMTMuMDAyNiwxLjgwOTEuNDM1NiwyLjM3OCwxLjE3M2wyLjMzNCwzLjA0NWMuNTY1OS43NDA0LDEuNDQ1MSwxLjE3MzksMi4zNzcsMS4xNzJoNi45NDdjMS4yOTA1LjAwMDYsMi4zMzY0LDEuMDQ2NSwyLjMzNywyLjMzN3YuMjUxYy4wMDE3LjM2MjMtLjI5MDcuNjU3My0uNjUzLjY1OS0uMDAwNywwLS4wMDEzLDAtLjAwMiwwSDguMTJjLTEuNjYzMS4xMzM3LTMuMTI3NCwxLjE0NzQtMy44MzgsMi42NTdsLTMuMzgyLDcuNjQ2Yy0uMDcxLjE3MTEtLjIzODguMjgxOS0uNDI0LjI4LS4yNTczLjAwNTUtLjQ3MDQtLjE5ODYtLjQ3NTktLjQ1NTktLjAwMDEtLjAwNDctLjAwMDEtLjAwOTQsMC0uMDE0MVoiLz48L3N2Zz4='));
-			case      'file': exit(base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYlcXQsQ0AIAhE0b//GgzDWGdjDCJoKck13CsIALi7gJxyVmFmyrsXLHEHD7zBmBbezvoJm4cL0OwYouM4O3J+UDYAAAAASUVORK5CYII='));
+			case      'file': exit(base64_decode('PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NCAxMTkuMjYwOCI+PHBhdGggZD0ibTUsMTE0VjVoNDJsNDIsNDJ2NjdzLTg0LC41ODY3LTg0LDBaTTQ3LDV2NDJoNDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEwIi8+PC9zdmc+'));
 		}
 	}
 	
@@ -222,7 +222,7 @@
 						}
 					?>
 					
-					<a href="<?php echo htmlentities($itemURL) ?>" class="name <?php if ($showIcons) echo $item['isdir'] ? 'directory' : 'file' ?>"><?php echo htmlentities($item['name']) . ($item['isdir'] ? ' /' : '') ?></a>
+					<a href="<?php echo htmlentities($itemURL) ?>" class="name <?php if ($showIcons) echo $item['isdir'] ? 'directory' : 'file' ?>"><span><div></div><?php echo htmlentities($item['name']) . ($item['isdir'] ? ' /' : '') ?></a>
 					
 				</li>
 				

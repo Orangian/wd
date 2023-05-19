@@ -146,4 +146,45 @@ span {
     width: fit-content;
 }
 
+ul#header li .asc span div {
+    background-image: url('<?php echo $_self ?>?i=asc');
+}
+
+ul#header li .desc span div {
+    background-image: url('<?php echo $_self ?>?i=desc');
+}
+
+ul li.item .directory div {
+    background-image: url('<?php echo $_self ?>?i=directory');
+}
+
+ul li.item .file div {
+    background-image: url('<?php echo $_self ?>?i=file');
+}
+
+ul#header li span {
+    display: flex;
+    flex-direction: row;
+}
+
+ul#header li span div {
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 1.5ch;
+    width: 1.5ch;
+}
+
+ul li.item div {
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 1.5ch;
+    width: 1.5ch;
+}
+
+ul li.item a span {
+    display: flex;
+    flex-direction: row;
+    gap: 1ch;
+}
+
 </style>
