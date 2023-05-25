@@ -61,6 +61,7 @@ a:hover {
 
 ul li:hover {
     background-color: var(--bg-2);
+    color: var(--cyan);
 }
 
 ul#header li {

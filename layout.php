@@ -9,12 +9,11 @@
 body {
     text-align: center;
     font-family: "Fira Sans";
-    font-size: 1.5ch;
+    font-size: 0.8em;
 }
 
 #wrapper {
     max-width: 120ch;
-    *width: 600px;
     margin: 0 auto;
     text-align: left;
 }
@@ -24,20 +23,20 @@ body#left {
 }
 
 body#left #wrapper {
-    margin: 0 20px;
+    margin: 0 2rem;
 }
 
 h1 {
-    font-size: 21px;
-    padding: 0 10px;
-    margin: 20px 0 0;
+    font-size: 1.5em;
+    padding: 0 0.5rem;
+    margin: 1rem 0 0;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 14px;
-    padding: 0 10px;
-    margin: 10px 0 0;
+    font-size: 1em;
+    padding: 0 0.5rem;
+    margin: 1rem 0 0;
     font-weight: normal;
 }
 
@@ -53,34 +52,33 @@ a:hover {
 }
 
 ul#header {	
-    margin-top: 20px;
+    margin-top: 1rem;
 }
 
 ul li {
     display: block;
     list-style-type: none;
     overflow: hidden;
-    padding: 10px;
+    padding: 0.5em;
 }
 
 ul li .date {
     text-align: center;
-    width: 120px;
+    width: 20%;
 }
 
 ul li .size {
     text-align: right;
-    width: 90px;
+    width: 10%;
 }
 
 ul li .date, ul li .size {
     float: right;
-    font-size: 12px;
     display: block;
 }
 
 ul#header li {
-    font-size: 11px;
+    font-size: 1em;
     font-weight: bold;
 }
 
@@ -88,12 +86,8 @@ ul#header li:hover {
     background-color: transparent;
 }
 
-ul#header li * {
-    font-size: 11px;
-}
-
 ul#header li .asc span, ul#header li .desc span {
-    padding-right: 15px;
+    padding-right: 2rem;
 }
 
 
@@ -106,14 +100,14 @@ ul li.item .name {
 }
 
 ul li.item .directory, ul li.item .file {
-    padding-left: 20px;
+    padding-left: 1.5rem;
 }
 
 #footer {
-    font-size: ;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding: 0 10px;
+    font-size: 0.75em;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
     text-align: left;
 }
 
@@ -131,7 +125,7 @@ a::after {
     transition-property: width;
     bottom: 0;
     transition: 0.5s cubic-bezier(0.42, 0.0, 0.0, 1);
-    border-radius: 1vw;
+    border-radius: 1em;
 }
 
 a:hover::after,  a:focus::after {
@@ -147,19 +141,39 @@ span {
 }
 
 ul#header li .asc span div {
-    background-image: url('<?php echo $_self ?>?i=asc');
+    background-image: var(--asc);
 }
 
 ul#header li .desc span div {
-    background-image: url('<?php echo $_self ?>?i=desc');
+    background-image: var(--desc);
 }
 
 ul li.item .directory div {
-    background-image: url('<?php echo $_self ?>?i=directory');
+    background-image: var(--directory);
 }
 
 ul li.item .file div {
-    background-image: url('<?php echo $_self ?>?i=file');
+    background-image: var(--file);
+}
+
+ul#header li span {
+    --asc: url('<?php echo $_self ?>?i=asc');
+    --desc: url('<?php echo $_self ?>?i=desc');
+}
+
+ul li.item {
+    --directory: url('<?php echo $_self ?>?i=directory');
+    --file: url('<?php echo $_self ?>?i=file');
+}
+
+ul#header li span:hover {
+    --asc: url('<?php echo $_self ?>?i=hasc');
+    --desc: url('<?php echo $_self ?>?i=hdesc');
+}
+
+ul li.item:hover {
+    --directory: url('<?php echo $_self ?>?i=hdirectory');
+    --file: url('<?php echo $_self ?>?i=hfile');
 }
 
 ul#header li span {
@@ -170,15 +184,15 @@ ul#header li span {
 ul#header li span div {
     background-position: right center;
     background-repeat: no-repeat;
-    height: 1.5ch;
-    width: 1.5ch;
+    height: 1.2em;
+    width: 1.2em;
 }
 
 ul li.item div {
     background-position: right center;
     background-repeat: no-repeat;
-    height: 1.5ch;
-    width: 1.5ch;
+    height: 1.2em;
+    width: 1.2em;
 }
 
 ul li.item a span {
