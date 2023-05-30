@@ -30,7 +30,6 @@ h1 {
     font-size: 1.5em;
     padding: 0 0.5rem;
     margin: 1rem 0 0;
-    font-weight: bold;
 }
 
 h2 {
@@ -79,7 +78,6 @@ ul li .date, ul li .size {
 
 ul#header li {
     font-size: 1em;
-    font-weight: bold;
 }
 
 ul#header li:hover {
@@ -96,7 +94,6 @@ ul li.item:first-child {
 }
 
 ul li.item .name {
-    font-weight: bold;
 }
 
 ul li.item .directory, ul li.item .file {
