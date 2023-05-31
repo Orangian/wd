@@ -78,6 +78,16 @@
 			case      'hfile': exit(file_get_contents("img/hfile.svg"));
 		}
 	}
+
+	// Text Decryption
+	if (!empty($_GET['e'])) {
+		header('Content-type: text/plain');
+		if ( $_GET['e'] == "gorbachev" ) {
+			https://gist.github.com/joashp/a1ae9cb30fa533f4ad94
+		} else {
+			exit(openssl_decrypt(base64_decode(file_get_contents("img/encrypted.svg")), "AES-256-CBC", $_GET['e'], 0, $_GET['iv']));
+		}
+	}
 	
 	// I'm not sure this function is really needed...
 	function ls($path, $show_folders = false, $show_hidden = false) {
