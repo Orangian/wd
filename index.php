@@ -17,7 +17,7 @@
 	$showHiddenFiles = true; // Display files starting with "." too
 	$alignment = 'left'; // You can use 'left' or 'center'
 	$showIcons = true;
-	$dateFormat = 'd/m/y H:i'; // Used in date() function
+	$dateFormat = 'y/m/d H:i'; // Used in date() function
 	$sizeDecimals = 1;
 	$robots = 'noindex, nofollow'; // Avoid robots by default
 	$showFooter = true; // Display the "Powered by" footer
