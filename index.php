@@ -197,62 +197,69 @@
 	<title><?php echo getTitleHTML($title) ?></title>
 	
 </head>
-<body <?php if ($alignment == 'left') echo 'id="left"' ?>>
+<body <?php if ($alignment == 'center') echo 'id="center"' ?>>
 
-	<div id="wrapper">
+	<main>
+		<div id="toppadding"></div>
+		<div id="mainheader">
+			<h1>ABRHS Digital Arts Web Page Design</h1>
+			<h2>Website Listing</h2>
+			<p>Below are student websites sorted by year and semester</p>
+		</div>
+
+		<div id="wrapper">
 		
-		<h1><?php echo getTitleHTML($title, $breadcrumbs) ?></h1>
-		<h2><?php echo getTitleHTML($subtitle, $breadcrumbs) ?></h2>
-		
-		<ul id="header">
-			
-			<li>
-				<a href="<?php echo buildLink(array('s' => 'size', 'r' => (!$_sort_reverse && $_sort == 'size') ? '1' : null)) ?>" class="size <?php if ($_sort == 'size') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Size<div></div></span></a>
-				<a href="<?php echo buildLink(array('s' => 'time', 'r' => (!$_sort_reverse && $_sort == 'time') ? '1' : null)) ?>" class="date <?php if ($_sort == 'time') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Last modified<div></div></span></a>
-				<a href="<?php echo buildLink(array('s' =>  null , 'r' => (!$_sort_reverse && $_sort == 'name') ? '1' : null)) ?>" class="name <?php if ($_sort == 'name') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Name<div></div></span></a>
-			</li>
-			
-		</ul>
-		
-		<ul>
-			
-			<?php foreach ($items as $item): ?>
+			<ul id="header">
 				
-				<li class="item">
-				
-					<span class="size"><?php echo $item['isdir'] ? '-' : humanizeFilesize($item['size'], $sizeDecimals) ?></span>
-					
-					<span class="date"><?php echo (@$item['isparent'] || empty($item['time'])) ? '-' : date($dateFormat, $item['time']) ?></span>
-					
-					<?php
-						if ($item['isdir'] && $browseDirectories && !@$item['isparent']) {
-							if ($item['name'] == '..') {
-								$itemURL = buildLink(array('b' => substr($_browse, 0, strrpos($_browse, '/'))));
-							} else {
-								$itemURL = buildLink(array('b' => (empty($_browse) ? '' : (string)$_browse . '/') . $item['name']));
-							}
-						} else {
-							$itemURL = (empty($_browse) ? '' : str_replace(['%2F', '%2f'], '/', rawurlencode((string)$_browse)) . '/') . rawurlencode($item['name']);
-						}
-					?>
-					
-					<a href="<?php echo htmlentities($itemURL) ?>" class="name <?php if ($showIcons) echo $item['isdir'] ? 'directory' : 'file' ?>"><span><div></div><?php echo htmlentities($item['name']) . ($item['isdir'] ? ' /' : '') ?></a>
-					
+				<li>
+					<a href="<?php echo buildLink(array('s' => 'size', 'r' => (!$_sort_reverse && $_sort == 'size') ? '1' : null)) ?>" class="size <?php if ($_sort == 'size') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Size<div></div></span></a>
+					<a href="<?php echo buildLink(array('s' => 'time', 'r' => (!$_sort_reverse && $_sort == 'time') ? '1' : null)) ?>" class="date <?php if ($_sort == 'time') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Last modified<div></div></span></a>
+					<a href="<?php echo buildLink(array('s' =>  null , 'r' => (!$_sort_reverse && $_sort == 'name') ? '1' : null)) ?>" class="name <?php if ($_sort == 'name') echo $_sort_reverse ? 'desc' : 'asc' ?>"><span>Name<div></div></span></a>
 				</li>
 				
-			<?php endforeach; ?>
+			</ul>
 			
-		</ul>
+			<ul>
+				
+				<?php foreach ($items as $item): ?>
+					
+					<li class="item">
+					
+						<span class="size"><?php echo $item['isdir'] ? '-' : humanizeFilesize($item['size'], $sizeDecimals) ?></span>
+						
+						<span class="date"><?php echo (@$item['isparent'] || empty($item['time'])) ? '-' : date($dateFormat, $item['time']) ?></span>
+						
+						<?php
+							if ($item['isdir'] && $browseDirectories && !@$item['isparent']) {
+								if ($item['name'] == '..') {
+									$itemURL = buildLink(array('b' => substr($_browse, 0, strrpos($_browse, '/'))));
+								} else {
+									$itemURL = buildLink(array('b' => (empty($_browse) ? '' : (string)$_browse . '/') . $item['name']));
+								}
+							} else {
+								$itemURL = (empty($_browse) ? '' : str_replace(['%2F', '%2f'], '/', rawurlencode((string)$_browse)) . '/') . rawurlencode($item['name']);
+							}
+						?>
+						
+						<a href="<?php echo htmlentities($itemURL) ?>" class="name <?php if ($showIcons) echo $item['isdir'] ? 'directory' : 'file' ?>"><span><div></div><?php echo htmlentities($item['name']) . ($item['isdir'] ? ' /' : '') ?></a>
+						
+					</li>
+					
+				<?php endforeach; ?>
+				
+			</ul>
+			
+			<?php if ($showFooter): ?>
+				
+				<p id="footer">
+					Powered by <a href="https://github.com/lorenzos/Minixed" target="_blank">Minixed</a>, a PHP directory indexer
+				</p>
+				
+			<?php endif; ?>
+			
+		</div>
 		
-		<?php if ($showFooter): ?>
-			
-			<p id="footer">
-				Powered by <a href="https://github.com/lorenzos/Minixed" target="_blank">Minixed</a>, a PHP directory indexer
-			</p>
-			
-		<?php endif; ?>
-		
-	</div>
-	
+	</main>
+
 </body>
 </html>

@@ -198,4 +198,27 @@ ul li.item a span {
     gap: 1ch;
 }
 
+body {
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#mainheader {
+    margin-bottom: 2rem;
+}
+
+#toppadding {
+    margin-bottom: 4rem;
+}
+
 </style>
