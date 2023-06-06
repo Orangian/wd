@@ -215,10 +215,33 @@ body {
 
 #mainheader {
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 120ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #toppadding {
     margin-bottom: 4rem;
 }
 
+#mainheader > div > img {
+    object-fit: contain;
+    filter: blur(2px);
+    border-radius: 50px;
+}
+
+#imagetext {
+    display: flex;
+    flex-direction: column;
+    max-width: 120ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#imagetext > h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
 </style>
