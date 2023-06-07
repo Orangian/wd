@@ -202,10 +202,8 @@
 	<main>
 		<div id="toppadding"></div>
 		<div id="mainheader">
-			<div id="imagetext">
-				<img src="/img/image.jpg">
-				<h1>ABRHS Digital Arts Web Page Design</h1>
-			</div>
+			<img src="/img/image.svg">
+			<h1>ABRHS Digital Arts Web Page Design</h1>
 			<h2>Website Listing</h2>
 			<p>Below are student websites sorted by year and semester</p>
 		</div>

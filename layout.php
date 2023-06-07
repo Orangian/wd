@@ -226,22 +226,15 @@ body {
     margin-bottom: 4rem;
 }
 
-#mainheader > div > img {
+#mainheader > img {
     object-fit: contain;
-    filter: blur(2px);
-    border-radius: 50px;
-}
-
-#imagetext {
-    display: flex;
-    flex-direction: column;
-    max-width: 120ch;
+    max-width: 80ch;
     margin-left: auto;
     margin-right: auto;
 }
 
-#imagetext > h1 {
-    margin-top: auto;
+#mainheader > h1 {
+    margin-top: 2rem;
     margin-bottom: auto;
 }
 </style>
