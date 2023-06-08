@@ -11,7 +11,7 @@
 	$title = 'Index of {{path}}';
 	$subtitle = '{{files}} objects in this folder, {{size}} total'; // Empty to disable
 	$breadcrumbs = false; // Make links in {{path}}
-	$showParent = false; // Display a (parent directory) link
+	$showParent = true; // Display a (parent directory) link
 	$showDirectories = true;
 	$showDirectoriesFirst = true; // Lists directories first when sorting by name
 	$showHiddenFiles = true; // Display files starting with "." too
@@ -23,7 +23,7 @@
 	$showFooter = true; // Display the "Powered by" footer
 	$openIndex = $browseDirectories && true; // Open index files present in the current directory if $browseDirectories is enabled
 	$browseDefault = null; // Start on a different "default" directory if $browseDirectories is enabled
-	$ignore = array("index.php","colors.php","layout.php",".DS_Store","img"); // Names of files and folders to not list (case-sensitive)
+	$ignore = array("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm"); // Names of files and folders to not list (case-sensitive)
 	
 	// =============================
 	// =============================
@@ -68,14 +68,15 @@
 	if (!empty($_GET['i'])) {
 		header('Content-type: image/svg+xml');
 		switch ($_GET['i']) {
-			case        'asc': exit(file_get_contents("img/asc.svg"));
-			case       'desc': exit(file_get_contents("img/desc.svg"));
-			case  'directory': exit(file_get_contents("img/directory.svg"));
-			case       'file': exit(file_get_contents("img/file.svg"));
-			case       'hasc': exit(file_get_contents("img/hasc.svg"));
-			case      'hdesc': exit(file_get_contents("img/hdesc.svg"));
-			case 'hdirectory': exit(file_get_contents("img/hdirectory.svg"));
-			case      'hfile': exit(file_get_contents("img/hfile.svg"));
+			case         'asc': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/asc.svg"));
+			case        'desc': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/desc.svg"));
+			case   'directory': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/directory.svg"));
+			case        'file': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/file.svg"));
+			case        'hasc': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/hasc.svg"));
+			case       'hdesc': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/hdesc.svg"));
+			case  'hdirectory': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/hdirectory.svg"));
+			case       'hfile': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/hfile.svg"));
+			case 'proclamation': exit(file_get_contents("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/proclamation.svg"));
 		}
 	}
 
@@ -188,8 +189,8 @@
 <html lang="en-US">
 <head>
 	<link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Fira+Sans&family=Zilla+Slab&family=Zilla+Slab+Highlight" as="style" crossorigin="anonymous"/>
-	<?php require 'colors.php' ?>
-	<?php require 'layout.php' ?>
+	<?php require 'eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/colors.php' ?>
+	<?php require 'eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm/layout.php' ?>
 	<meta charset="UTF-8">
 	<meta name="robots" content="<?php echo htmlentities($robots) ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -202,7 +203,7 @@
 	<main>
 		<div id="toppadding"></div>
 		<div id="mainheader">
-			<img src="/img/image.svg">
+			<img src="<?php echo $_self ?>?i=proclamation">
 			<h1>ABRHS Digital Arts Web Page Design</h1>
 			<h2>Website Listing</h2>
 			<p>Below are student websites sorted by year and semester</p>

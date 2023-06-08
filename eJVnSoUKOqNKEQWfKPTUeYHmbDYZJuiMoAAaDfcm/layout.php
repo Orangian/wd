@@ -12,6 +12,11 @@ body {
     font-size: 0.8em;
 }
 
+html {
+    border: 5px solid var(--bg-2);
+    min-height: calc(100vh - 5px);
+}
+
 #wrapper {
     max-width: 120ch;
     margin: 0 auto;
@@ -231,6 +236,7 @@ body {
     max-width: 80ch;
     margin-left: auto;
     margin-right: auto;
+    filter: drop-shadow(0px 0px 3px rgba(240,240,240,0.5));
 }
 
 #mainheader > h1 {
