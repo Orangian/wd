@@ -548,6 +548,7 @@
 		margin-top: 2rem;
 		margin-bottom: auto;
 	}
+	
 	</style>
 
 	<meta charset="UTF-8">
