@@ -8,14 +8,14 @@
 	// =============================
 	
 	$browseDirectories = true; // Navigate into sub-folders
-	$title = 'Index of {{path}}';
-	$subtitle = '{{files}} objects in this folder, {{size}} total'; // Empty to disable
+	$title = '';
+	$subtitle = ''; // Empty to disable
 	$breadcrumbs = false; // Make links in {{path}}
 	$showParent = true; // Display a (parent directory) link
 	$showDirectories = true;
 	$showDirectoriesFirst = true; // Lists directories first when sorting by name
 	$showHiddenFiles = true; // Display files starting with "." too
-	$alignment = 'left'; // You can use 'left' or 'center'
+	$alignment = 'center'; // You can use 'left' or 'center'
 	$showIcons = true;
 	$dateFormat = 'y/m/d H:i'; // Used in date() function
 	$sizeDecimals = 1;
@@ -23,7 +23,7 @@
 	$showFooter = true; // Display the "Powered by" footer
 	$openIndex = $browseDirectories && true; // Open index files present in the current directory if $browseDirectories is enabled
 	$browseDefault = null; // Start on a different "default" directory if $browseDirectories is enabled
-	$ignore = array("eJVnSoUKOqNKEQWfKPTUeYHmbDYZJuiMoAAaDfcm"); // Names of files and folders to not list (case-sensitive)
+	$ignore = array(""); // Names of files and folders to not list (case-sensitive)
 	
 	// =============================
 	// =============================
